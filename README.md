@@ -15,6 +15,8 @@ GET: https://www.random.org/integers/?num=1&min=1&max=1&col=1&base=10&format=pla
 # How to run tests:
 * Install all required packages:
 ```npm install```
-* To run tests as is:
+* To run tests (it will run a default set of tests defined by requirements):
 ```npm run test```
-* Or you can modify config.js file to run different dice quantity and roll times
+* If you wish to manually change dice quantity or amount of rolls, 
+you may change env variables to desired quantities, for example:
+```DICE_QUANTITY=3,5 TIMES_TO_ROLL=7777 npm run test```

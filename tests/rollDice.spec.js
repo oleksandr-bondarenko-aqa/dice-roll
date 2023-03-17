@@ -2,11 +2,17 @@ const config = require("../helpers/config.js")
 const {rollTheDice, calculatePercentages, checkDeviation} = require("../helpers/dices.helper");
 
 const {timesToRoll, diceQuantity} = config;
-describe(`Roll ${diceQuantity} dice ${timesToRoll} times`,() => {
+
+const diceAmount = typeof process.env.DICE_QUANTITY === 'string'
+    ? process.env.DICE_QUANTITY.split(',').map(Number) : diceQuantity;
+const rollTimes = typeof process.env.TIMES_TO_ROLL === 'string'
+    ? process.env.TIMES_TO_ROLL.split(',').map(Number) : timesToRoll;
+
+describe(`Roll ${diceAmount} dice ${rollTimes} times`,() => {
     const testData = [];
 
-    diceQuantity.forEach((dice) => {
-        timesToRoll.forEach((rolls) => {
+    diceAmount.forEach((dice) => {
+        rollTimes.forEach((rolls) => {
             testData.push({ dice, rolls });
         });
     });
