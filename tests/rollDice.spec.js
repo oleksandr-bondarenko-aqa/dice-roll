@@ -1,5 +1,5 @@
 const config = require("../helpers/config.js")
-const {rollTheDice, calculatePercentages, checkDeviation} = require("../helpers/dices.helper");
+const {rollTheDice, calculatePercentages, checkDeviation} = require("../helpers/dice.helper");
 
 const {timesToRoll, diceQuantity} = config;
 
